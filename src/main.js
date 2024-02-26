@@ -7,7 +7,6 @@ const filtro = document.querySelector("#filtro");
 
 let cardData = [...data];
 
-
 filtro.addEventListener("change", (e) => {
   let value = e.target.value;
   const filterBy = value.split("|")[0];
@@ -21,18 +20,16 @@ filtro.addEventListener("change", (e) => {
 
   cardsItens.appendChild(renderItems(cardData));
 
-  cardsItens.innerHTML = ""; // Limpa os itens anteriores
+  cardsItens.innerHTML = "";
 
-  // Renderiza a mensagem de estatísticas apenas se uma categoria do filtro for selecionada
   if (value !== "todos") {
     const count = computeStats(data, filterBy, value);
     const statsMessage = renderStatsMessage(count);
     cardsItens.appendChild(statsMessage);
   }
 
-  cardsItens.appendChild(renderItems(cardData)); // Renderiza os itens filtrados ou todos os itens
+  cardsItens.appendChild(renderItems(cardData));
 });
-
 
 const ordenacao = document.querySelector("#ordenacao");
 

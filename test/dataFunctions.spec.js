@@ -1,9 +1,6 @@
 import { computeStats, sortData, filterData } from '../src/dataFunctions.js';
 import { data as fakeData } from './data.js';
 
-
-
-
 describe('testes filterData', () => {
   it('deve exibir todos os dados do dataset que combinarem com a formação sugerida, quando o usuário escolher a opção "formacaoSugerida"', () => {
     const filteredData = filterData(fakeData, 'formacaoSugerida', 'Ciência da Computação');
